@@ -1,0 +1,2 @@
+Realização de exercícios da Trybe relacionados aos comandos básicos de git.
+Foram utilizados comandos como: git init, git add, git status, git commit -m "mensagem", git branch, git checkout -b nome_da_branch, git checkout nome_da_branch, git log, git merge.
