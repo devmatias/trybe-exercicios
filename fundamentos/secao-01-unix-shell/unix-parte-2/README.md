@@ -1,0 +1,2 @@
+Realização de exercícios da Trybe relacionados aos comandos básicos do terminal no linux.
+Foram utilizados comandos como: >, cat, >>, <, |, chmod, funções do CTRL + C, CTRL + Z, CTRL + D, jobs, ps, kill, dentre outros.
