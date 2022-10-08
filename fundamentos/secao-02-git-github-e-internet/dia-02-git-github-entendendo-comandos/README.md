@@ -1,0 +1,2 @@
+Realização de exercícios da Trybe relacionados aos comandos básicos de git.
+Foram utilizados comandos como: git clone, git remote -v, git pull, git push, git push -u origin nome_da_branch, git checkout -b nome_da_branch, git checkout nome_da_branch, git log, git merge.
