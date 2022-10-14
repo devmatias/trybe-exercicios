@@ -1,0 +1,63 @@
+
+h1, h2, h3, h4, h5 , h6 {
+    color: red;
+}
+
+h1 em, h2 em, h3 em, h4 em, h5 em, h6 em {
+    border: 1px solid black;
+    font-size: 40px;
+    
+}
+
+
+ol {
+    background-color: yellow;
+}
+
+ol li.par {
+    color: green;
+}
+
+ol li.impar {
+    text-transform: uppercase;
+}
+
+li {
+    font-size: 20px;
+}
+
+li em {
+    font-weight: bold;
+}
+
+.languages-styling {
+    color: blue;
+}
+
+.java {
+    background-color: pink;
+}
+
+a.allies:hover {
+    font-weight: bold;
+}
+
+a.allies.so:hover {
+    color: orange;
+}
+
+a.allies.w3:hover {
+    color: purple;
+}
+
+a.allies.ff:hover {
+    color: red;
+}
+
+a.allies.dd:hover {
+    color: blue;
+}
+
+a.allies.trybe:hover {
+    color: green;
+}
