@@ -1,0 +1,53 @@
+div:hover {
+    border-style: dotted;
+}
+
+
+
+.primary {
+    background-color:aqua;
+}
+
+.secondary {
+    background-color:bisque;
+}
+
+.complementary {
+    background-color:brown;
+    font-size: 50px;
+}
+
+.dark {
+    background-color: grey;
+}
+
+.light {
+    background-color:aliceblue;
+}
+
+.first {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-decoration: overline;
+}
+
+.second {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: line-through;
+}
+
+.third {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: underline;
+}
+
+.fourth {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.fifth {
+    font-family: fantasy;
+}
+
+.italic {
+    font-style: italic;
+}
