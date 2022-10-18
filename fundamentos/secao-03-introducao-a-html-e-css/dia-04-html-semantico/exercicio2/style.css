@@ -1,19 +1,36 @@
 body {
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
-header {
-    text-align: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
 }
 
 nav {
     text-align: left;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+header h1 {
+    padding: 10px 5px 0;
+}
+
+header h3 {
+    padding: 0 5px 5px ;
+}
+
 article {
-    width: 80%;
+    width: 70%;
     display: inline-block;  
     margin: 0;
+    padding: 10px;
+    background-color: #E8D6CB;
+}
+
+footer {
+    padding: 10px;
+    background-color: #5D2E46;
+    color: #fff;
 }
 
 aside {
@@ -23,26 +40,45 @@ aside {
     right: 0;
 }
 
+.title-style {
+    background-color: #AD6A6C;
+    color: #fff;
+    padding: 10px 5px 5px;
+}
+
+.navbar {
+    background-color: #5D2E46;
+    padding: 15px;
+}
+
 .navbar a{
-    padding-right: 8rem;
-    font-size: 20px;
-    color: black;
+    padding-right: 5rem;
+    color: #fff;
+    text-decoration: none;
 }
 
-.first-fact {
-    background-color: azure;
-    margin: 0;
+.content-nav li {
+    display: inline-block;
+    margin-left: -40px;
 }
 
-.second-fact {
-    background-color:cyan;
-}
-
-.third-fact {
-    background-color:darkgrey;
-}
 
 .content-pictures {
     width: 300px;
     display: inline-block;
+}
+
+.reference-style li a {
+    color: #fff;
+    text-decoration: none;
+    
+}
+
+.reference-style li {
+    list-style-type: none;
+    margin-left: -40px;
+}
+
+.reference-style {
+    overflow: hidden;
 }

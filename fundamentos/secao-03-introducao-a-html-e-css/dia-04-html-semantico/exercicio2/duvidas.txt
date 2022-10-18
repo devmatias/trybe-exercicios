@@ -1,0 +1,2 @@
+Como posicionar o aside de forma responsiva?
+Dificuldade na aplicação do display
