@@ -62,10 +62,23 @@ aside {
     margin-left: -40px;
 }
 
+.fact-content {
+    display: inline-block;
+    width: 50%;
+}
 
-.content-pictures {
+.first-picture {
     width: 300px;
     display: inline-block;
+    padding-left: 80px ;
+
+}
+
+.second-picture {
+    width: 400px;
+    display: inline-block;
+    padding-left: 30px ;
+
 }
 
 .reference-style li a {
