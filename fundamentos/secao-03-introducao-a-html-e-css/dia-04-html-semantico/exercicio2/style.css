@@ -1,0 +1,48 @@
+body {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+header {
+    text-align: center;
+}
+
+nav {
+    text-align: left;
+}
+
+article {
+    width: 80%;
+    display: inline-block;  
+    margin: 0;
+}
+
+aside {
+    width: 20%;
+    position: fixed;
+    top: 100px;
+    right: 0;
+}
+
+.navbar a{
+    padding-right: 8rem;
+    font-size: 20px;
+    color: black;
+}
+
+.first-fact {
+    background-color: azure;
+    margin: 0;
+}
+
+.second-fact {
+    background-color:cyan;
+}
+
+.third-fact {
+    background-color:darkgrey;
+}
+
+.content-pictures {
+    width: 300px;
+    display: inline-block;
+}
