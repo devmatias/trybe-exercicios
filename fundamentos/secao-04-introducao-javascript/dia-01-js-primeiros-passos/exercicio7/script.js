@@ -157,3 +157,54 @@ if (venda > custo) {
 } else {
   console.log("Seu custo é maior que o valor da sua venda!");
 }
+
+let salarioBruto = 6000.00;
+
+
+if(salarioBruto > 5189.82) {
+    let descINSS = 570.88;
+    let salarioDescINSS = salarioBruto -  descINSS;
+    if(salarioDescINSS > 4664.68) {
+        let descIR = salarioDescINSS * 0.275;
+        let salarioLiquido = salarioDescINSS - descIR;
+        console.log("O salário líquido1 é R$" + salarioLiquido);
+    } else {
+        let descIR = salarioDescINSS * 0.225;
+        let salarioLiquido = salarioDescINSS - descIR;
+        console.log("O salário líquido2 é R$" + salarioLiquido);
+    }
+} else if(salarioBruto > 2594.93 && salarioBruto <= 5189.82) {
+    let descINSS = salarioBruto * 0.11;
+    let salarioDescINSS = salarioBruto -  descINSS;
+    if(salarioDescINSS > 3751.06 && salarioDescINSS <= 4664.68) {
+        let descIR = salarioDescINSS * 0.225;
+        let salarioLiquido = salarioDescINSS - descIR;
+        console.log("O salário líquido3 é R$" + salarioLiquido);
+    } else if(salarioDescINSS > 2826.66 && salarioDescINSS <= 3751.06){
+        let descIR = salarioDescINSS * 0.15;
+        let salarioLiquido = salarioDescINSS - descIR;
+        console.log("O salário líquido4 é R$" + salarioLiquido);
+    } else if(salarioDescINSS > 1903.99 && salarioDescINSS <= 2826.66){
+        let descIR = salarioDescINSS * 0.075;
+        let salarioLiquido = salarioDescINSS - descIR;
+        console.log("O salário líquido5 é R$" + salarioLiquido);
+    }
+} else if(salarioBruto > 1556.95 && salarioBruto <= 2594.93) {
+    let descINSS = salarioBruto * 0.1;
+    let salarioDescINSS = salarioBruto -  descINSS;
+    if(salarioDescINSS > 1903.99 && salarioDescINSS <= 2826.66) {
+        let descIR = salarioDescINSS * 0.075;
+        let salarioLiquido = salarioDescINSS - descIR;
+        console.log("O salário líquido6 é R$" + salarioLiquido);
+    } else if(salarioDescINSS <= 1903.99){
+        let descIR = 0;
+        let salarioLiquido = salarioDescINSS - descIR;
+        console.log("O salário líquido7 é R$" + salarioLiquido);
+    }
+} else if(salarioBruto <= 1556.95 ) {
+    let descINSS = salarioBruto * 0.08;
+    let salarioDescINSS = salarioBruto -  descINSS;
+    let descIR = 0;
+    let salarioLiquido = salarioDescINSS - descIR;
+    console.log("O salário líquido é R$" + salarioLiquido);
+}
