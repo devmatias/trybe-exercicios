@@ -61,12 +61,12 @@
     changeTagP('Daqui a 2 anos me vejo como um grande desenvolvedor.');
     // 2
     const changeSquareColor = (color) => {
-        document.querySelector(".main-content").style.backgroundColor = color;
+        document.getElementsByClassName("main-content")[0].style.backgroundColor = color;
     };
     changeSquareColor('rgb(76,164,109)');
     // 3
     const changeCenterSquareColor = (color) => {
-        document.querySelector(".center-content").style.backgroundColor = color;
+        document.getElementsByClassName("center-content")[0].style.backgroundColor = color;
     };
     changeCenterSquareColor('white');
     // 4
@@ -74,6 +74,19 @@
         document.getElementsByTagName("h1")[0].innerText = string;
     };
     changeTagH1('Exercício - JavaScript');
+    // 5
+    const changeTagP2 = () => {
+        document.getElementsByTagName("p")[0].style.textTransform = 'uppercase';
+
+    }
+    changeTagP2();
+    const showTagP = () => {   
+        let objectsP = document.getElementsByTagName("p");
+        for (let i = 0; i < objectsP.length; i += 1){
+            console.log(objectsP[i].innerHTML);
+        }
+    }
+    showTagP();
     </script>
   </body>
 </html>
