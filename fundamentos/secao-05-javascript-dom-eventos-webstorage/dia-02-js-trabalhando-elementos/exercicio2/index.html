@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício</title>
+    <style>
+        section {
+            border-color: black;
+            border-style: solid;
+        }
+
+        .title {
+            text-align: center;
+        }
+
+        .main-content {
+            background-color: yellow;
+        }
+
+        .main-content .center-content {
+            background-color: red;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .main-content .center-content p {
+            font-style: italic;
+        }
+
+        .main-content .left-content {
+            background-color: green;
+            width: 60%;
+            margin-left: 0;
+            margin-right: auto;
+        }
+
+        .main-content .left-content .small-image {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 100%;
+        }
+
+        .main-content .right-content {
+            background-color: blue;
+            width: 60%;
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+        .main-content .description {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // COLOQUE SEU CÓDIGO AQUI
+        const numbers = ['um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez']
+        const addElementByQuery = (element, where, index, content = "") => {
+            const createElement = document.createElement(element);
+            findElement(where)[index].appendChild(createElement).innerHTML = content;
+        };
+
+        const findElement =(where) => {
+            const elementFound = document.querySelectorAll(where);
+            return elementFound
+        };
+
+        const addListElements = (array, where, index) => {
+            for (let i = 0; i < array.length; i += 1) {
+                addElementByQuery('li', where, index, array[i]);
+            }
+        };
+
+        addElementByQuery('h1', 'body', 0, 'Exercício - JavaScript DOM');
+        addElementByQuery('main', 'body', 0);
+        findElement('main')[0].classList.add('main-content');
+        addElementByQuery('section', 'main', 0);
+        findElement('section')[0].classList.add('center-content');
+        addElementByQuery('p', '.center-content', 0, 'Conteúdo do parágrafo na section de classe center-content');
+        addElementByQuery('section', 'main', 0);
+        findElement('section')[1].classList.add('left-content');
+        addElementByQuery('section', 'main', 0);
+        findElement('section')[2].classList.add('right-content');
+        addElementByQuery('img', '.left-content', 0);
+        findElement('img')[0].classList.add('small-image');
+        findElement('.small-image')[0].setAttribute('src', 'https://picsum.photos/200');
+        addElementByQuery('ul', '.right-content', 0);
+        addListElements(numbers, 'ul', 0);
+        addElementByQuery('h3', 'main', 0, 'primeira h3');
+        addElementByQuery('h3', 'main', 0, 'segunda h3');
+        addElementByQuery('h3', 'main', 0, 'terceira h3');
+        findElement('h1')[0].classList.add('title');
+        const findH3s = findElement('h3')
+        for (let index = 0; index < findH3s.length; index += 1) {
+            findH3s[index].classList.add('description');
+        }
+        findElement('main')[0].removeChild(findElement('.left-content')[0]);
+        findElement('.right-content')[0].style.marginRight = 'auto';
+        findElement('main')[0].style.backgroundColor = 'green';
+        findElement('.right-content ul')[0].removeChild(findElement('ul')[0].lastElementChild);
+        findElement('.right-content ul')[0].removeChild(findElement('ul')[0].lastElementChild);
+    </script>
+</body>
+
+</html>
