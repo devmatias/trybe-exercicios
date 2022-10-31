@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <main id="paiDoPai">
+        <section id="pai">
+          <section id="primeiroFilho"></section>
+          <section id="elementoOndeVoceEsta">
+            <section id="primeiroFilhoDoFilho"></section>
+            <section id="segundoEUltimoFilhoDoFilho"></section>
+          </section>
+          Atenção!
+          <section id="terceiroFilho"></section>
+          <section id="quartoEUltimoFilho"></section>
+        </section>
+      </main>
+      <script>
+        const seletorPai = document.querySelector('#pai');
+        const sectionElement = document.createElement('section');
+        seletorPai.appendChild(sectionElement).innerHTML = 'totoca';
+        const seletorOndeEstou = seletorPai.children.elementoOndeVoceEsta;
+        const createH1Element = document.createElement('h1');
+        seletorOndeEstou.appendChild(createH1Element).innerHTML = 'Um titulo totoca';
+        const createH2Element = document.createElement('h2');
+        seletorOndeEstou.children.primeiroFilhoDoFilho.appendChild(createH2Element).innerHTML = 'mais um titulo totoca';
+        const getTagH2 = document.querySelector('h2');
+        const getThirdChildrenByTagH2 = getTagH2.parentElement.parentElement.parentElement.children.terceiroFilho.appendChild(createH2Element).innerHTML = 'totoca';
+        seletorPai.removeChild(primeiroFilho);
+        seletorPai.removeChild(terceiroFilho);
+        seletorPai.removeChild(quartoEUltimoFilho);
+        seletorPai.removeChild(document.querySelector('#pai').children[1]);
+        seletorOndeEstou.removeChild(segundoEUltimoFilhoDoFilho);
+        seletorOndeEstou.removeChild(document.querySelector('h1'));
+
+
+
+
+      </script>
+</body>
+</html>
