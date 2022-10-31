@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <!-- <title>Return first and last name from a form - w3resource</title> -->
+    <!-- <title>Insert row in a table - w3resource</title> -->
+    <title>Change the content of a cell</title>
+</head>
+
+<body>
+    <!-- <form id="form1" onsubmit="getFormvalue()">
+        First name: <input type="text" name="fname" value="David"><br>
+        Last name: <input type="text" name="lname" value="Beckham"><br>
+        <input type="submit" value="Submit">
+    </form>
+    <p>chama no brele</p> -->
+    <!-- <p><a id="w3r" type="text/html" hreflang="en-us" rel="nofollow" target="_self"
+            href="https://www.w3resource.com/">w3resource</a></p>
+    <button onclick="getAttributes()">Click here to get attributes value</button> -->
+    <!-- <table id="sampleTable" border="1">
+        <tr>
+            <td>Row1 cell1</td>
+            <td>Row1 cell2</td>
+        </tr>
+        <tr>
+            <td>Row2 cell1</td>
+            <td>Row2 cell2</td>
+        </tr>
+    </table><br>
+    <input type="button" onclick="insert_Row()" value="Insert row"> -->
+    <table id="myTable" border="1">
+        <tr>
+            <td>Row1 cell1</td>
+            <td>Row1 cell2</td>
+        </tr>
+        <tr>
+            <td>Row2 cell1</td>
+            <td>Row2 cell2</td>
+        </tr>
+        <tr>
+            <td>Row3 cell1</td>
+            <td>Row3 cell2</td>
+        </tr>
+    </table>
+    <form>
+        <input type="button" onclick="changeContent()" value="Change content">
+        <input type="button" onclick="addColumn()" value="Add Column">
+        <input type="button" onclick="addRow()" value="Add Row">
+
+    </form>
+    <script>
+        // const getFormvalue = () => {
+        //     const quantidade = document.querySelectorAll('#form1 input');
+        //     for (let i = 0; i < quantidade.length; i += 1) {
+        //         console.log(quantidade[i].value);
+        //     }
+        // }
+
+        // const changeColor = (color) => {
+        //     document.querySelector('p').style.backgroundColor = color;
+        // }
+        // changeColor('orange')
+        // const getAttributes = () => {
+        //     let atributos = document.querySelector('#w3r').attributes;
+        //     for (let index = 0; index < atributos.length; index += 1){
+        //         console.log(atributos[index]);
+        //     }
+        // }
+        // getAttributes();
+        // const insert_Row = () => {
+        //     let indexTr = document.querySelectorAll('tr');
+        //     var x = document.getElementById('sampleTable').insertRow(indexTr.length);
+        //     var y = x.insertCell(0);
+        //     var z = x.insertCell(1);
+        //     y.innerHTML = "New Cell1";
+        //     z.innerHTML = "New Cell2";
+        // }
+        const changeContent = () => {
+            rn = window.prompt("Input the Row number(0,1,2)", "0");
+            cn = window.prompt("Input the Column number(0,1)", "0");
+            content = window.prompt("Input the Cell content");
+            var x = document.getElementById('myTable').rows[parseInt(rn, 10)].cells;
+            console.log(x);
+            x[parseInt(cn, 10)].innerHTML = content;
+        }
+        let cellLength = document.querySelector('#myTable').rows[0].cells.length;
+        const addColumn = () => {
+            let rows = document.querySelectorAll('#myTable tr');
+            for (let index = 0; index < rows.length; index += 1) {
+                for (let index2 = 1; index2 > 0; index2 -= 1) {
+                    let newCell = rows[index].insertCell(rows.length - 1);
+                    newCell.innerHTML = `New Column${cellLength + 1}`
+                    cellLength = document.querySelector('#myTable').rows[0].cells.length;
+                }
+            }
+        }
+        const addRow = () => {
+            let indexTr = document.querySelectorAll('tr');
+            let rows = document.getElementById('myTable').insertRow(indexTr.length);
+            for (let index = 0; index < cellLength; index += 1) {
+                let newCell = rows.insertCell(index);
+                newCell.innerHTML = `New Cell`
+            }
+        }
+    </script>
+</body>
+
+</html>

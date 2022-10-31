@@ -88,27 +88,38 @@ function somatório(number) {
 
 // console.log(somatório(7));
 
-function comparadorDeString(string1, string2) {
-    let resultado;
-    let index2 = string2.length - 1;
-    console.log(string1.length)
-    if(string1.length > string2.length) {
-        for(let index = string1.length - 1; index2 >= 0; index--){
-            console.log(string2[index2], string1[index]);
-            if(string2[index2] !== string1[index]){
-                resultado = false;
-                break;
-            } else {
-                resultado = true;
-            }
-            index2 -= 1;
+// function comparadorDeString(string1, string2) {
+//     let resultado;
+//     let index2 = string2.length - 1;
+//     console.log(string1.length)
+//     if(string1.length > string2.length) {
+//         for(let index = string1.length - 1; index2 >= 0; index--){
+//             console.log(string2[index2], string1[index]);
+//             if(string2[index2] !== string1[index]){
+//                 resultado = false;
+//                 break;
+//             } else {
+//                 resultado = true;
+//             }
+//             index2 -= 1;
 
             
-        }
-    } else {
-        resultado = "Parâmetros inválidos";
-    }
-    return resultado;
-}
+//         }
+//     } else {
+//         resultado = "Parâmetros inválidos";
+//     }
+//     return resultado;
+// }
 
-console.log(comparadorDeString("trybe", "ibe"));
+// console.log(comparadorDeString("trybe", "ibe"));
+
+function verificaFimPalavra(word, ending) {
+    let resultado = word.split(ending);
+    console.log(resultado);
+    if (resultado[resultado.length - 1] === '') {
+      return true;
+    }
+    return false;
+  }
+
+  console.log(verificaFimPalavra('trybe', 'flor'))
