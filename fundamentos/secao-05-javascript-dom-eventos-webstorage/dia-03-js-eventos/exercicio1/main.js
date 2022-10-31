@@ -50,6 +50,9 @@ myWebpage.addEventListener('mouseover', (event) => {
   event.target.style.color = 'orange'
 });
 
+myWebpage.addEventListener('mouseout', (event) => {
+  event.target.style.color = 'unset';
+});
 
 // Segue abaixo um exemplo do uso de event.target:
 
