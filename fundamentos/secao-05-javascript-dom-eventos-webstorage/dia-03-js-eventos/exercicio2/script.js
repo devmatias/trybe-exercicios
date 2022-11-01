@@ -28,7 +28,7 @@ const monthDays = () => {
     29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
     20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
   ];
-  
+
   for (let index = 0; index < decemberDaysList.length; index += 1) {
     const createLiElement = document.createElement("li");
     createLiElement.innerHTML = decemberDaysList[index];
@@ -104,33 +104,67 @@ fridayButton.addEventListener("click", () => {
   }
 });
 
-const getDays = document.getElementsByClassName('day');
+const getDays = document.getElementsByClassName("day");
 for (let index = 0; index < getDays.length; index += 1) {
-  getDays[index].addEventListener('mouseover', (event) => {
-    event.target.style.fontSize = '40px';
-  
-  })
-  getDays[index].addEventListener('mouseout', (event) => {
-    event.target.style.fontSize = '20px';
-  
-  })
+  getDays[index].addEventListener("mouseover", (event) => {
+    event.target.style.fontSize = "40px";
+  });
+  getDays[index].addEventListener("mouseout", (event) => {
+    event.target.style.fontSize = "20px";
+  });
 }
 
-const createTask = (task) => {
-  const myTask = document.createElement('span');
+const createTask = (task, color) => {
+  const myTask = document.createElement("span");
   myTask.innerHTML = `${task} <br>`;
-  document.getElementsByClassName('my-tasks')[0].appendChild(myTask);
-}
-
-createTask('Ir malhar!');
-createTask('Estudar programação!');
+  document.getElementsByClassName("my-tasks")[0].appendChild(myTask);
+};
 
 const colorCaption = (color) => {
-  const myDiv = document.createElement('div');
-  myDiv.className = 'my-tasks';
+  const myDiv = document.createElement("div");
+  myDiv.className = "task";
   myDiv.style.backgroundColor = color;
-  document.getElementsByClassName('my-tasks')[0].appendChild(myDiv);
-}
+  document.getElementsByClassName("my-tasks")[0].appendChild(myDiv);
+};
 
-colorCaption('green');
-colorCaption('red');
+colorCaption("green");
+createTask("Ir malhar!");
+colorCaption("red");
+createTask("Estudar programação!");
+
+const setTaskClass = () => {
+  let myTasks = document.querySelectorAll(".task");
+  for (let index = 0; index < myTasks.length; index += 1) {
+    myTasks[index].addEventListener("click", (event) => {
+      if (event.target.classList.contains("selected")) {
+        for (let index2 = 0; index2 < myTasks.length; index2 += 1) {
+          myTasks[index2].classList.remove("selected");
+        }
+      } else {
+        for (let index2 = 0; index2 < myTasks.length; index2 += 1) {
+          myTasks[index2].classList.remove("selected");
+        }
+        event.target.className = "task selected";
+      }
+    });
+  }
+};
+
+setTaskClass();
+
+const setDayColor = () => {
+  let selectedTask = document.getElementsByClassName("task selected");
+  let days = document.querySelector("#days");
+  days.addEventListener("click", (event) => {
+    let eventTargetColor = event.target.style.color;
+    let taskColor = selectedTask[0].style.backgroundColor;
+    if (selectedTask.length > 0 && eventTargetColor !== taskColor) {
+      event.target.style.color = taskColor; 
+    } else {
+      event.target.style.color = "rgb(119,119,119)";
+    }
+
+  });
+};
+
+setDayColor();
