@@ -104,16 +104,33 @@ fridayButton.addEventListener("click", () => {
   }
 });
 
-const getDays = document.getElementsByClassName('day')
+const getDays = document.getElementsByClassName('day');
 for (let index = 0; index < getDays.length; index += 1) {
-  getDays[index].addEventListener('mouseover', () => {
-    getDays[index].style.fontSize = '40px';
+  getDays[index].addEventListener('mouseover', (event) => {
+    event.target.style.fontSize = '40px';
   
   })
-  getDays[index].addEventListener('mouseout', () => {
-    getDays[index].style.fontSize = '20px';
+  getDays[index].addEventListener('mouseout', (event) => {
+    event.target.style.fontSize = '20px';
   
   })
 }
 
+const createTask = (task) => {
+  const myTask = document.createElement('span');
+  myTask.innerHTML = `${task} <br>`;
+  document.getElementsByClassName('my-tasks')[0].appendChild(myTask);
+}
 
+createTask('Ir malhar!');
+createTask('Estudar programação!');
+
+const colorCaption = (color) => {
+  const myDiv = document.createElement('div');
+  myDiv.className = 'my-tasks';
+  myDiv.style.backgroundColor = color;
+  document.getElementsByClassName('my-tasks')[0].appendChild(myDiv);
+}
+
+colorCaption('green');
+colorCaption('red');
