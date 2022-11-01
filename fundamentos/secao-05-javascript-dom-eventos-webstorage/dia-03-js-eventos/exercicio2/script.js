@@ -22,15 +22,14 @@ const createDaysOfTheWeek = () => {
 createDaysOfTheWeek();
 
 // Escreva seu código abaixo.
-
+const getMonthDays = document.getElementById("days");
 const monthDays = () => {
   const decemberDaysList = [
     29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
     20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
   ];
-  const getMonthDays = document.getElementById("days");
-
-  for (let index = 1; index < decemberDaysList.length; index += 1) {
+  
+  for (let index = 0; index < decemberDaysList.length; index += 1) {
     const createLiElement = document.createElement("li");
     createLiElement.innerHTML = decemberDaysList[index];
     createLiElement.classList.add("day");
@@ -65,21 +64,56 @@ const createButton = (id, content) => {
 };
 
 createButton("btn-holiday", "Feriados");
-let verifier = false;
-const myButton = document.getElementById("btn-holiday");
-myButton.addEventListener("click", () => {
+
+let verifierHoliday = false;
+const holidayButton = document.getElementById("btn-holiday");
+holidayButton.addEventListener("click", () => {
   const holidays = document.querySelectorAll(".holiday");
-  if (verifier === false) {
+  if (verifierHoliday === false) {
     for (let index = 0; index < holidays.length; index += 1) {
       holidays[index].style.backgroundColor = "orange";
-      verifier = true;
+      verifierHoliday = true;
     }
   } else {
     for (let index = 0; index < holidays.length; index += 1) {
       holidays[index].style.backgroundColor = "rgb(238,238,238)";
-      verifier = false;
+      verifierHoliday = false;
     }
   }
 });
 
-createButton('btn-friday', 'Sexta-Feira');
+createButton("btn-friday", "Sexta-Feira");
+
+const fridayButton = document.getElementById("btn-friday");
+let verifierFriday = false;
+let fridaysContent = [];
+fridayButton.addEventListener("click", () => {
+  const fridays = document.querySelectorAll(".friday");
+  if (verifierFriday === false) {
+    for (let index = 0; index < fridays.length; index += 1) {
+      fridaysContent.push(fridays[index].innerHTML);
+      fridays[index].innerHTML = "ACABOU!";
+    }
+    verifierFriday = true;
+  } else {
+    for (let index = 0; index < fridays.length; index += 1) {
+      fridays[index].innerHTML = fridaysContent[index];
+    }
+    verifierFriday = false;
+    fridaysContent = [];
+  }
+});
+
+const getDays = document.getElementsByClassName('day')
+for (let index = 0; index < getDays.length; index += 1) {
+  getDays[index].addEventListener('mouseover', () => {
+    getDays[index].style.fontSize = '40px';
+  
+  })
+  getDays[index].addEventListener('mouseout', () => {
+    getDays[index].style.fontSize = '20px';
+  
+  })
+}
+
+
