@@ -41,9 +41,9 @@ figcaption {
   }
 
   figure {
-    min-width: 40%;
-    display: flex;
-    flex-direction: column;
+    width: 40%;
+    /* display: flex;
+    flex-direction: column; */
   }
 
 
