@@ -1,0 +1,61 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.container {
+  margin: 10px;
+}
+
+header {
+  background-color: pink;
+  padding: 10px 0 5px;
+}
+
+header p {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+}
+
+header nav ul li {
+  list-style-type: none;
+  text-transform: uppercase;
+  border-bottom: 1px solid black;
+}
+
+@media screen and (max-width: 600px) {
+  aside ul li {
+    margin: 10px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  aside {
+    text-align: center;
+  }
+  aside ul li {
+    margin: 15px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  aside {
+    text-align: end;
+  }
+  aside ul li {
+    margin: 20px;
+  }
+}
