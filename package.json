@@ -1,0 +1,23 @@
+{
+  "name": "trybe-exercicios",
+  "version": "1.0.0",
+  "description": "Meu primeiro repositório git!! Adicionando novo texto!Novo dado",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devmatias/trybe-exercicios.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devmatias/trybe-exercicios/issues"
+  },
+  "homepage": "https://github.com/devmatias/trybe-exercicios#readme",
+  "devDependencies": {
+    "jest": "^29.3.1"
+  }
+}
