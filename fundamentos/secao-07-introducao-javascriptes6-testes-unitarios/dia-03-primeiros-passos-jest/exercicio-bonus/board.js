@@ -50,7 +50,7 @@ console.log(professionalBoard)
 // Pesquisa
 const searchEmployee = (id, detail) => {
   // Implemente seu código aqui
-  let myEmployee = undefined;
+  let myEmployee = '';
   for (let employee of professionalBoard) {
     if (employee.id === id) {
       myEmployee = employee;
