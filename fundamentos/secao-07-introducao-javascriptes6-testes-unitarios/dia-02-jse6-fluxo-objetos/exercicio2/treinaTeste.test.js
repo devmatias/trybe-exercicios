@@ -1,4 +1,4 @@
-const { myRemove, myFizzBuzz, decode, encode,  } = require("./treinaTeste");
+const { myRemove, myFizzBuzz, decode, encode } = require("./treinaTeste");
 
 describe("A função myRemove()", () => {
   it("Verifique se a chamada myRemove([1, 2, 3, 4], 3) retorna o array esperado", () => {
