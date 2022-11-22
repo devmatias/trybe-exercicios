@@ -36,13 +36,6 @@ const professionalBoard = [
     lastName: "Dodds",
     specialities: ["Backend"],
   },
-
-  {
-    id: "4678-2",
-    firstName: "Paul",
-    lastName: "Dodds",
-    specialities: ["Backend"],
-  },
 ];
 
 console.log(professionalBoard)
