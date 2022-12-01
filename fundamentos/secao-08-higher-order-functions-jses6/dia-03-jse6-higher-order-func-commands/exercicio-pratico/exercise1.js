@@ -75,7 +75,8 @@ console.log(fantasyOrScienceFiction(books));
 
 const oldBooksOrdered = (books) => {
   // escreva seu código aqui
-  const oldBooks = books.filter((element) => 2022 - element.releaseYear > 60);
+  const currentYear = new Date().getFullYear();
+  const oldBooks = books.filter((element) => currentYear - element.releaseYear >= 60);
   oldBooks.sort((a, b) => a.releaseYear - b.releaseYear);
   return oldBooks;
 };
@@ -108,7 +109,7 @@ console.log(fantasyOrScienceFictionAuthors(books));
 const oldBooks = (books) => {
   // escreva seu código aqui
   const oldBooks = books
-    .filter((element) => 2022 - element.releaseYear > 60)
+    .filter((element) => new Date().getFullYear() - element.releaseYear > 60)
     .map((element) => element.name);
   return oldBooks;
 };
@@ -128,3 +129,12 @@ const authorWith3DotsOnName = (books) => {
 };
 
 console.log(authorWith3DotsOnName(books));
+
+const authorWith3DotsOnName1 = () => {
+  return books.find((book) => (
+    book.author.name.split(' ')
+      .filter((word) => word.endsWith('.')).length === 3
+  )).name;
+}
+
+console.log(authorWith3DotsOnName1());
