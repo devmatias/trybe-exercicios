@@ -1,0 +1,21 @@
+{
+  "name": "ambiente-desenvolvimento",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite --open",
+    "lint": "eslint ./src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "clipboard-copy": "^4.0.1",
+    "nanoid": "^4.0.0",
+    "vite": "^4.0.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.31.0"
+  }
+}
