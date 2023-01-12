@@ -104,7 +104,26 @@ body {
     grid-template-rows: min-content repeat(8, 4.4rem);
     border-radius: 2rem;
     padding: 2rem 3rem 4rem;
-    gap: 2rem;
+    gap: 1.8rem;
+    height: 60vh;
+    overflow-y: scroll;
+}
+
+.currency-container::-webkit-scrollbar {
+    width: .5rem;
+}
+
+.currency-container::-webkit-scrollbar-track {
+    background: #000;
+    border-radius: 5px;
+}
+
+.currency-container::-webkit-scrollbar-thumb {
+    background: #e1e1e1;
+}
+
+.currency-container::-webkit-scrollbar-button {
+    height: 1px;
 }
 
 .currency-container h2 {
@@ -143,8 +162,4 @@ body {
     line-height: 1.7rem;
     margin-right: .5rem;
     color: #FFE713;
-}
-
-.swal-title {
-    font-size: 10rem;
 }

@@ -1,12 +1,5 @@
-import "./style.css";
+import './style.css';
 import Swal from 'sweetalert2';
-
-const customSwal = Swal.mixin({
-  customClass: {
-    title: 'swal-title',
-    text: 'btn btn-danger'
-  },
-})
 
 function createCurrencyBlock(fatherElement) {
   const newRate = document.createElement('div');
@@ -14,7 +7,7 @@ function createCurrencyBlock(fatherElement) {
   const newFirstElementBlock = document.createElement('div');
   newFirstElementBlock.classList.add('first-element');
   const newCoinImage = document.createElement('img');
-  newCoinImage.src = "./src/imgs/coins.png";
+  newCoinImage.src = './src/imgs/coins.png';
   newCoinImage.alt = 'coins';
   const newHeading5 = document.createElement('h5');
   newFirstElementBlock.appendChild(newCoinImage);
@@ -26,18 +19,18 @@ function createCurrencyBlock(fatherElement) {
 }
 
 function deleteChild() {
-  const currencyContainer = document.querySelector(".currency-container");
+  const currencyContainer = document.querySelector('.currency-container');
   var child = currencyContainer.lastElementChild; 
   while (child) {
-      currencyContainer.removeChild(child);
-      child = currencyContainer.lastElementChild;
+    currencyContainer.removeChild(child);
+    child = currencyContainer.lastElementChild;
   }
 }
 
 function searchCurrency() {
-  const currencyContainer = document.querySelector('.currency-container')
+  const currencyContainer = document.querySelector('.currency-container');
   const inputCurrency = document.querySelector('.input-currency');
-  const searchButton = document.querySelector('.btn-search')
+  const searchButton = document.querySelector('.btn-search');
   const url = 'https://api.exchangerate.host/latest?base=';
 
   searchButton.addEventListener('click', () => {
@@ -48,11 +41,11 @@ function searchCurrency() {
         text: 'Você precisa passar uma moeda!',
         background: '#303030',
         color: '#FFF',
-      })
+      });
       return;
     }
 
-    deleteChild()
+    deleteChild();
 
     fetch(url + inputCurrency.value)
       .then(response => response.json())
@@ -65,23 +58,23 @@ function searchCurrency() {
             text: 'Moeda não existente!',
             background: '#303030',
             color: '#FFF',
-          })
+          });
           return;
         }
         const headingContainer = document.createElement('h2');
         headingContainer.innerHTML = `Valores referentes a 1 ${inputCurrency.value}`;
-        currencyContainer.appendChild(headingContainer)
-        console.log(rates)
+        currencyContainer.appendChild(headingContainer);
+        console.log(rates);
         for(let rate in rates) {
-          createCurrencyBlock(currencyContainer)
+          createCurrencyBlock(currencyContainer);
           const getCurrencyBlocks = document.querySelectorAll('.currency-block');
           getCurrencyBlocks[getCurrencyBlocks.length - 1].firstElementChild.lastElementChild.innerHTML = rate;
           getCurrencyBlocks[getCurrencyBlocks.length - 1].lastElementChild.innerHTML = Number(rates[rate]).toFixed(2);
         }
-      })
+      });
 
-  })
+  });
 }
 
-searchCurrency()
+searchCurrency();
 
