@@ -20,7 +20,7 @@ function createCurrencyBlock(fatherElement) {
 
 function deleteChild() {
   const currencyContainer = document.querySelector('.currency-container');
-  var child = currencyContainer.lastElementChild; 
+  let child = currencyContainer.lastElementChild;
   while (child) {
     currencyContainer.removeChild(child);
     child = currencyContainer.lastElementChild;
@@ -34,13 +34,15 @@ function searchCurrency() {
   const url = 'https://api.exchangerate.host/latest?base=';
 
   searchButton.addEventListener('click', () => {
-    if(!inputCurrency.value) {
+    if (!inputCurrency.value) {
       Swal.fire({
         icon: 'error',
         title: 'Ops...',
         text: 'Você precisa passar uma moeda!',
         background: '#303030',
         color: '#FFF',
+        width: '50vw',
+
       });
       return;
     }
@@ -48,16 +50,17 @@ function searchCurrency() {
     deleteChild();
 
     fetch(url + inputCurrency.value)
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         const { rates } = data;
-        if(!Object.keys(rates).some((rate) => rate === inputCurrency.value)) {
+        if (!Object.keys(rates).some((rate) => rate === inputCurrency.value)) {
           Swal.fire({
             icon: 'error',
             title: 'Ops...',
             text: 'Moeda não existente!',
             background: '#303030',
             color: '#FFF',
+            width: '50vw',
           });
           return;
         }
@@ -65,16 +68,16 @@ function searchCurrency() {
         headingContainer.innerHTML = `Valores referentes a 1 ${inputCurrency.value}`;
         currencyContainer.appendChild(headingContainer);
         console.log(rates);
-        for(let rate in rates) {
+        for (const rate in rates) {
           createCurrencyBlock(currencyContainer);
           const getCurrencyBlocks = document.querySelectorAll('.currency-block');
-          getCurrencyBlocks[getCurrencyBlocks.length - 1].firstElementChild.lastElementChild.innerHTML = rate;
-          getCurrencyBlocks[getCurrencyBlocks.length - 1].lastElementChild.innerHTML = Number(rates[rate]).toFixed(2);
+          getCurrencyBlocks[getCurrencyBlocks.length - 1]
+            .firstElementChild.lastElementChild.innerHTML = rate;
+          getCurrencyBlocks[getCurrencyBlocks.length - 1]
+            .lastElementChild.innerHTML = Number(rates[rate]).toFixed(2);
         }
       });
-
   });
 }
 
 searchCurrency();
-

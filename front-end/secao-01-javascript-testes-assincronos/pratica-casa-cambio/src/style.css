@@ -100,7 +100,7 @@ body {
 .currency-container {
     background: #FFFFFF0F;
     display: grid;
-    grid-template-columns: repeat(5, 15rem);
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     grid-template-rows: min-content repeat(8, 4.4rem);
     border-radius: 2rem;
     padding: 2rem 3rem 4rem;
@@ -162,4 +162,24 @@ body {
     line-height: 1.7rem;
     margin-right: .5rem;
     color: #FFE713;
+}
+
+.swal2-popup {
+    height: 50vh;
+}
+
+.swal2-icon {
+    transform: scale(1.5) translateY(30%);
+}
+
+.swal2-title {
+    font-size: 4rem !important;
+}
+
+.swal2-html-container {
+    font-size: 2rem !important;
+}
+
+.swal2-confirm {
+    font-size: 2rem !important;
 }
