@@ -68,6 +68,7 @@ const readMovies = async () => {
   } catch (error) {
     console.error(`Erro ao ler o arquivo: ${error.message}`);
   }
+  console.log('algo')
 }
 
 
